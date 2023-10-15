@@ -17,7 +17,7 @@ function carItem({ car }) {
             currency: "USD",
           }).format(car.price)}
         </p>
-        <button>Read more</button>
+        <button className="btn border-2 py-2 px-3 rounded">Read more</button>
       </div>
     </div>
   );

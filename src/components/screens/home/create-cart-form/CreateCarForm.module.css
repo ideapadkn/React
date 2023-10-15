@@ -1,0 +1,40 @@
+.form {
+  margin: 10px auto 30px;
+  color: #000;
+}
+
+.form input {
+  padding: 5px 10px;
+  border: 1px solid transparent;
+  outline: none;
+  transition: all .5s;
+  margin-bottom: 10px;
+}
+
+.form input:focus {
+  border-color: aqua;
+  box-shadow: 4px 4px 8px 0px rgba(17, 237, 230, 0.2);
+}
+
+.form button {
+  position: relative;
+  color: #fff;
+}
+
+.form button::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 100%;
+  background-color: rgba(17, 237, 230, 0.2);
+  left: 0;
+  top: 0;
+  transition: all 1s;
+  z-index: -10;
+}
+
+.form button:hover::after {
+  width: 100%;
+  box-shadow: 4px 4px 8px 0px rgba(17, 237, 230, 0.2);
+  border-color: aqua;
+}
