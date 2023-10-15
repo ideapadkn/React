@@ -1,11 +1,17 @@
 import { cars } from "./cars.data.js";
 import CarItem from "./car-item/CarItem";
+// import { useMemo } from "react";
 
 function Home() {
+  // const filteredCars = useMemo(
+  //   () => cars.filter((car) => car.price > 22000),
+  //   []
+  // );
+
   return (
     <div>
       <h1 className="text-center text-2xl font-semibold">Cars catalog</h1>
-      <div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 lg:grid-cols-4">
         {cars.length ? (
           cars.map((car) => <CarItem key={car.id} car={car} />)
         ) : (
