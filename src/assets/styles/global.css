@@ -10,3 +10,32 @@ body {
 h1 {
   margin-bottom: 20px;
 }
+
+.btn {
+  position: relative;
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+.btn::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 100%;
+  background-color: #bcd1e6;
+  left: 0;
+  top: 0;
+  transition: all 1s;
+  z-index: -10;
+}
+
+.btn:hover {
+  color: #111;
+  font-weight: 500;
+}
+
+.btn:hover::after {
+  width: 100%;
+  box-shadow: 4px 4px 8px 0px rgba(17, 237, 230, 0.2);
+  border-color: aqua;
+}

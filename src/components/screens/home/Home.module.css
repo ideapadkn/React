@@ -25,26 +25,3 @@
 .info p {
   margin-bottom: 10px;
 }
-
-button {
-  position: relative;
-  color: #fff;
-}
-
-button::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 100%;
-  background-color: rgba(17, 237, 230, 0.2);
-  left: 0;
-  top: 0;
-  transition: all 1s;
-  z-index: -10;
-}
-
-button:hover::after {
-  width: 100%;
-  box-shadow: 4px 4px 8px 0px rgba(17, 237, 230, 0.2);
-  border-color: aqua;
-}

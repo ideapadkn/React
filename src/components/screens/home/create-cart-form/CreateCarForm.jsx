@@ -1,16 +1,23 @@
 import { useState } from "react";
 import styles from "./CreateCarForm.module.css";
 
-const CreateCarForm = () => {
-  const [name, setName] = useState("");
-  const [price, setPrice] = useState("");
-  const [image, setImage] = useState("");
+const clearData = {
+  price: "",
+  name: "",
+  image: "",
+};
+
+const CreateCarForm = ({ setCars }) => {
+  const [data, setData] = useState({
+    price: "",
+    name: "",
+    image: "",
+  });
 
   const createCar = (e) => {
     e.preventDefault();
-    console.log(name);
-    console.log(price);
-    console.log(image);
+    setCars((prev) => [...prev, { id: prev.length + 1, ...data }]);
+    setData(clearData);
   };
 
   return (
@@ -19,20 +26,26 @@ const CreateCarForm = () => {
         <input
           className="flex-auto rounded"
           placeholder="Name"
-          onChange={(e) => setName(e.target.value)}
-          value={name}
+          onChange={(e) =>
+            setData((prev) => ({ ...prev, name: e.target.value }))
+          }
+          value={data.name}
         />
         <input
           className="flex-auto rounded"
           placeholder="Price"
-          onChange={(e) => setPrice(e.target.value)}
-          value={price}
+          onChange={(e) =>
+            setData((prev) => ({ ...prev, price: e.target.value }))
+          }
+          value={data.price}
         />
         <input
           className="flex-auto rounded"
           placeholder="Image"
-          onChange={(e) => setImage(e.target.value)}
-          value={image}
+          onChange={(e) =>
+            setData((prev) => ({ ...prev, image: e.target.value }))
+          }
+          value={data.image}
         />
       </div>
 
