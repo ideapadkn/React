@@ -2,6 +2,7 @@ import CarItem from "./car-item/CarItem";
 import CreateCarForm from "./create-cart-form/CreateCarForm.jsx";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { CarService } from "../../../services/car.service";
 // import { useMemo } from "react";
 
 function Home() {
@@ -14,8 +15,9 @@ function Home() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios.get("http://localhost:3000/cars");
-      setCars(response.data);
+      const data = await CarService.getAll();
+
+      setCars(data);
     };
     fetchData();
   }, [cars]);
